@@ -3,11 +3,19 @@
 
 @mixin respond($breakpoint) {
     
+      
+    @if $breakpoint==phonesm {
+        @media only screen and (max-width: 30em) {  //480px
+            @content
+        }
+    }
+    
     @if $breakpoint==phone {
         @media only screen and (max-width: 37.5em) {  //600px
             @content
         }
     }
+  
 
     @if $breakpoint==tab-port {
         @media only screen and (max-width: 56.25em) {  //900
@@ -28,4 +36,12 @@
         }
     }
 
+}
+
+
+// Center the element
+
+@mixin rowCenter(){
+    transform: translateX(-50%);
+    margin-left: 50%;
 }
